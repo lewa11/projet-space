@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+  
+  body {
+    margin: auto;
+    max-width: 900px;
+  }
+
+  header {
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;  /* Nécessaire pour que le positionnement absolute fonctionne sur les éléments enfants */
+
+  }
+  
+  h1 {
+    font-size: 8rem;
+    text-align: center;
+  }
+  
+  p {
+    padding: 20rem;
+    font-size: 4rem;
+
+  }
+  .press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .animated-text {
+    position: fixed;     /* Utilise fixed pour que l'élément reste au milieu lors du scroll */
+    top: 50%;            /* 50% du haut de l'écran */
+    left: 50%;           /* 50% du côté gauche */
+    transform: translate(-50%, -50%);  /* Centrage parfait horizontal et vertical */
+    z-index: 10;         /* S'assure que le texte reste au-dessus des autres éléments */
+  }
+  
+  

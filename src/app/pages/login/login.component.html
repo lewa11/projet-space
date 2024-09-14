@@ -1,0 +1,54 @@
+<section class="relative bg-cover bg-center bg-no-repeat flex flex-col justify-start min-h-screen" style="background-image: url('assets/images/bg6.png');">
+    <div class="absolute inset-0"></div>
+    <div class="relative flex flex-col mx-auto w-screen justify-center items-center content-center self-start registration-page">
+      <div class="w-auto rounded-lg shadow bg-black bg-opacity-70 h-auto z-40 flex relative justify-center items-center content-center mt-24 border border-white">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8 mt-5 flex flex-col m-8 mx-24 press-start-2p-regular">
+  
+
+  
+          
+  
+          <div class="-ml-4">
+            <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white flex relative -left-16">S'identifier</h1>
+          </div>
+  
+          <form class="space-y-4 md:space-y-6 -m-20 ">
+            <div>
+              <div class="relative mb-4 text-white">
+                <input  name="username" id="username" type="email" class="bg-black bg-opacity-50 border border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-3 pt-6 pb-2.5 peer placeholder-transparent" autocomplete="email" required autofocus>
+                <label for="username" class="absolute text-sm text-gray-400 transform -translate-y-1/2 top-3 left-3 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 transition-all duration-200 mt-1.5">E-mail</label>
+              </div>
+            </div>
+  
+            <div>
+              <div class="relative mb-4">
+                <input name="password" id="password" type="password" class="bg-black bg-opacity-50 border border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-3 pt-6 pb-2.5 peer placeholder-transparent" autocomplete="current-password" required>
+                <label for="password" class="absolute text-sm text-gray-400 transform -translate-y-1/2 top-3 left-3 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 transition-all duration-200 mt-1.5">Mot de passe</label>
+              </div>
+  
+              <!-- Checkbox Remember me -->
+              <div class="items-center flex flex-row mb-5">
+                <input  name="remember_me" id="remember_me" type="checkbox" class="text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                <label for="remember_me" class="ml-2 block text-sm text-white">Se souvenir de moi</label>
+              </div>
+  
+              <!-- Bouton de soumission -->
+              <button class="press-start-2p-regular font-mono font-bold bg-yellow-600 w-full text-white hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md text-sm px-5 py-2.5 text-center mb-5" type="submit">
+                S'identifier
+              </button>
+            </div>
+  
+            <div class="flex flex-col items-center content-center text-center">
+              <a routerLink="/forgot-password" class="hover:underline text-left hover:text-red-600 text-white">Mot de passe oublié ?</a>
+              <a routerLink="/register" class="text-center items-center mt-6 text-white">Première visite sur MIDWAM ?<br><span class="text-blue-600 hover:underline">Inscrivez-vous</span></a>
+            </div>
+  
+            <div class="mt-12">
+              <a routerLink="/" class="flex justify-center -mb-8 hover:underline text-white">Retour à l'accueil</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
