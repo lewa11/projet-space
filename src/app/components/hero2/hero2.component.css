@@ -1,0 +1,134 @@
+.vaisseau {
+  top: 50%; /* 50% du haut de l'écran */
+  left: 50%; /* 50% du côté gauche */
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+/*  ---------------- */
+.wrapp {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--indent2) 0;
+  padding-bottom: 30px;
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  font-size: var(--fz-big);
+  line-height: 1;
+  color: var(--pr-color);
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.title .stroke {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-n3);
+}
+
+.main {
+  padding-bottom: var(--indent2);
+}
+.content {
+  width: 100%;
+  height: auto;
+  padding: 0 var(--indent);
+}
+.section-text {
+  margin-top: var(--indent2);
+}
+p {
+  color: #fafafa;
+  font-size: 25px;
+  line-height: 1.4;
+}
+/* scroll trigger *************************/
+/*****************************************/
+.section-slider {
+  height: auto;
+  padding: 30px 0;
+}
+.gsap__slider {
+  height: 80vh;
+}
+.gsap__bl {
+  width: 100%;
+}
+.gsap__inner,
+.gsap__track {
+  display: flex;
+}
+.gsap__inner {
+  width: calc(100% + var(--indent));
+}
+.gsap__track {
+  will-change: transform;
+}
+.gsap__item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 750px;
+  /* background: #000; */
+  will-change: transform;
+}
+.gsap__item img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+.gsap__item-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.gsap__item-num {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  font-size: 50px;
+  color: rgb(246, 242, 5);
+  opacity: 0.5;
+  z-index: 3;
+}
+.gsap_slider .content,
+.gsap_h,
+.gsap__bl,
+.gsap__inner,
+.gsap__item {
+  height: 100%;
+}
+/* lenis css */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './components/hero/hero.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -7,8 +7,6 @@ import { loadSlim } from "@tsparticles/slim";
 import { NgParticlesService } from "@tsparticles/angular";
 import { NgxParticlesModule } from "@tsparticles/angular";
 import { Engine, Container } from "@tsparticles/engine";
-
-
 
 @Component({
   selector: 'app-root',
@@ -20,23 +18,22 @@ import { Engine, Container } from "@tsparticles/engine";
 export class AppComponent implements OnInit {
   title = 'projet-animation1';
   id = "tsparticles";
-
   /* URL pour charger la configuration JSON */
   particlesUrl = "assets/among-us.json";
-
- 
 
   constructor(private readonly ngParticlesService: NgParticlesService) {}
 
   ngOnInit(): void {
+
+    // Initialiser les particules une seule fois
     this.ngParticlesService.init(async (engine: Engine) => {
       console.log(engine);
       await loadSlim(engine);  // Slim configuration
     });
   }
-
-  particlesLoaded(container: Container): void {
+    particlesLoaded(container: Container): void {
     console.log(container);
-  }
+    
+  } 
 }
 

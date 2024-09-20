@@ -1,56 +1,56 @@
-<div class="navbar fixed bg-yellow-600 z-20 text-black press-start-2p-regular">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-      </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content rounded-box mt-3 w-52 p-2 shadow bg-yellow-600 z-50">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a class="btn btn-ghost text-xl">Midwam</a>
+<div
+  class="flex flex-row justify-between items-center text-white z-40 fixed w-screen press-start-2p-regular pr-10 pl-5">
+  <!-- Logo -->
+  <div>
+    <img src="assets/images/anim5.gif" alt="" />
   </div>
-  
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 gap-10">
-      <li><a>Acceuil</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Contact</a></li>
-    </ul>
+  <!-- Menu for larger screens -->
+  <div
+    class="hidden lg:flex flex-row justify-center items-center lg:text-sm lg:px-2 lg:py-1   lg:gap-5
+    xl:ml-56
+    2xl:ml-56">
+    <a class="css-button-retro--sand" href="">Home</a>
+    <a class="css-button-retro--sand" href="">Services</a>
+    <a class="css-button-retro--sand" href="">Contact</a>
   </div>
-  
-  <div class="navbar-end gap-5 ">
-    <a href="app-login" class="btn bg-black">Inscription</a>
+  <!-- User Options -->
+  <div
+    class="hidden lg:flex lg:flex-col lg:mt-16 xl:mt-0 xl:flex-row lg:ml-10 flex-row justify-center items-center gap-5
+    ">
+    <a class="css-button-retro--sand text-sm xl:hidden" href="app-login">Connexion</a>
+    <a class="css-button-retro--sand text-sm xl:hidden" href="app-register">Inscription</a>
+  </div>
 
-    <a href="app-login" class="btn bg-black">Connexion</a>
+  <!-- Mobile menu button -->
+  <div class="lg:hidden">
+    <button id="menu-btn" class="text-white focus:outline-none">
+      <!-- Icon for the burger menu -->
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden flex-col lg:hidden fixed top-16 left-0 right-0 bg-black text-white space-y-4 p-4 z-50"
+  >
+    <a class="css-button-retro--sand" href="">Accueil</a>
+    <a class="css-button-retro--sand" href="">Services</a>
+    <a class="css-button-retro--sand" href="">Contact</a>
+    <a class="css-button-retro--sand" href="">Connexion</a>
+    <a class="css-button-retro--sand" href="">Inscription</a>
   </div>
 </div>

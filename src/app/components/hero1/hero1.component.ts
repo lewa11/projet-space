@@ -8,9 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { TextPlugin } from 'gsap/TextPlugin';
 
-
-Splitting();
-
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, TextPlugin);
 
 @Component({
   selector: 'app-hero1',
@@ -21,54 +19,56 @@ Splitting();
 })
 export class Hero1Component implements AfterViewInit {
   ngAfterViewInit(): void {
-    let selection = Splitting();
 
-    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, TextPlugin);
+    let selections = Splitting({ target: '.text-reveal' });
 
-    gsap.from(selection[0].chars, {
-      // transformOrigin: "bottom", // testez d'autres animations facilement
-      scaleY: 3,
-      y: 80,
-      opacity: 0,
-      color: "#000000",
-      duration: 3,
-      stagger: 0.1,
-
-      scrollTrigger: {
-        trigger: ".text-reveal",
-        start: "top 50%",
-        end: "bottom bottom",
-        scrub: 2,
-      }
+    // const Lenis ------------
+    const lenis = new Lenis({
+      duration: 0.1
     });
-
-    const lenis = new Lenis();
-
     lenis.on("scroll", ScrollTrigger.update);
-
     gsap.ticker.add((time) => {
-      lenis.raf(time * 600);
+      lenis.raf(time * 1000);
     });
+    // --------------------------------
 
+    // Animation pour le titre Midwam
     gsap.ticker.lagSmoothing(0);
     const animated = document.querySelector(".animated-text");
     gsap.to('.animated-text', {
       xPercent: 500,
       duration: 2,
       scrollTrigger: {
-
         trigger: animated,
         toggleActions: "restart reverse play reverse",
         start: "top 30%",
-        end: "100% -100%",
-        markers: true,
-        scrub: 1     // Ajoute des marqueurs visuels pour voir quand l'animation se déclenche (utile pour déboguer)
+        end: "100% -300%",
+        markers: false,
+        scrub: 2,     // Ajoute des marqueurs visuels pour voir quand l'animation se déclenche (utile pour déboguer)
       }
     });
 
+    // Animation sur le texte découpé
+    selections.forEach((selection: any) => {
+      gsap.from(selection.chars, {
+        scaleY: 4.5,
+        y: 300,
+        z: -300,
+        rotationX: 180,
+        opacity: 0,
+        color: "#000000",
+        duration: 3,
+        stagger: 0.1,
+        markers: false,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: selection.words[0].parentElement,  // Trigger for each paragraph
+          start: "top 120%",
+          end: "bottom 20%",
+          scrub: 2,
 
-
-
+        }
+      });
+    });
   }
-
 }

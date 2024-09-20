@@ -2,7 +2,7 @@
   "autoPlay": true,
   "background": {
     "color": {
-      "value": "#000000"
+      "value": "#0f172a"
     },
     "image": "",
     "position": "",
@@ -273,7 +273,7 @@
       },
       "decay": 0,
       "distance": {},
-      "direction": "right",
+      "direction": "left",
       "drift": 0,
       "enable": true,
       "gravity": {
